@@ -1,0 +1,1386 @@
+    * {
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 300;
+        font-size: 15px;
+        color: #777;
+        background-color: #fff;
+        line-height: 26px;
+    }
+    
+    a {
+        display: inline-block;
+        color: #777;
+        text-decoration: none;
+    }
+    
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    li {
+        margin: 0;
+        padding: 0;
+    }
+    /* задать параметры на всех картинок чтобы они не выходили за пределы своих границ в 
+контейнере или в своей секции. Пояснение 9 урок 42 минута*/
+    
+    img {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+    }
+    
+    .header {
+        padding: 27px 0;
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+        /* overflow: hidden; */
+        /* чтобы меню оставалось при скроле */
+        /* position: fixed;
+    background-color: #2a2a2a;
+    z-index: 10; */
+    }
+    
+    .header:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    
+    .container-header {
+        max-width: 1560px;
+        padding: 0 15px;
+        margin: 0 auto;
+    }
+    
+    .logo {
+        float: left;
+    }
+    
+    .menu {
+        float: right;
+    }
+    
+    .menu li {
+        display: inline-block;
+    }
+    
+    .menu li+li {
+        padding-left: 30px;
+    }
+    
+    .menu a {
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, .75);
+        font-size: 11px;
+        font-weight: 11;
+        line-height: 21px;
+        letter-spacing: 3px;
+    }
+    
+    .top {
+        background-image: url(../img/top-bg.jpg);
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: cover;
+        background-color: Black;
+        height: 100vh;
+        position: relative;
+    }
+    
+    .top__inner {
+        position: absolute;
+        max-width: 830px;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        left: 50%;
+        top: 40%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .top__title {
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, .9);
+        font-family: 'Dosis', sans-serif;
+        font-weight: 400;
+        font-size: 30px;
+        letter-spacing: 30px;
+        margin-bottom: 90px;
+    }
+    
+    .top__text {
+        font-size: 19px;
+        color: rgba(255, 255, 255, .68);
+    }
+    /* для того чтобы кнопка меню не отображалась в обычной версии, нужно добавить класс menu__btn */
+    
+    .menu__btn {
+        display: none;
+    }
+    
+    .to-go {
+        position: absolute;
+        margin: 0 auto;
+        bottom: 36px;
+        width: 26px;
+        height: 26px;
+        /* чтобы кнопка стала по центру при position, нужно добавить left: 0; right: 0; */
+        left: 0;
+        right: 0;
+        color: #222;
+        font-size: 15px;
+    }
+    /* Чтобы стрелочка отображалась нужно написать: */
+    
+    .to-go:before {
+        position: absolute;
+        z-index: 1;
+        animation-iteration-count: infinite;
+        animation-name: fadeInDown;
+        animation-duration: 1s;
+        animation-fill-mode: both;
+    }
+    /* квадрат поставить на after */
+    
+    .to-go:after {
+        content: "";
+        background-color: #fff;
+        width: 26px;
+        height: 26px;
+        border-radius: 1px;
+        transform: rotate(-45deg);
+        position: absolute;
+        left: -8px;
+        top: -10px;
+        border-radius: 3px;
+    }
+    
+    .container {
+        max-width: 1170px;
+        margin: 0 auto;
+        padding: 0px 15px;
+    }
+    
+    .row {
+        margin: 0px -15px;
+    }
+    
+    .row:after {
+        content: "";
+        clear: both;
+        display: block;
+    }
+    
+    .col-2 {
+        width: 50%;
+        float: left;
+        padding: 0px 15px;
+    }
+    
+    .col-4 {
+        width: 33.333%;
+        float: left;
+        padding: 0px 15px;
+    }
+    
+    .col-8 {
+        width: 66.6667%;
+        float: left;
+        padding: 0px 15px;
+    }
+    /* пояснение 9 урок 1:46:00 */
+    
+    @media(max-width: 768px) {
+        .col-sm-12 {
+            width: 100%;
+        }
+        .col-sm-6 {
+            width: 50%;
+        }
+    }
+    
+    @media(max-width: 414px) {
+        .col-sm-12 {
+            width: 100%;
+        }
+    }
+    
+    .about {
+        padding-top: 125px;
+        padding-bottom: 135px;
+        border-bottom: 1px solid #ececec;
+    }
+    
+    .about__title {
+        font-size: 18px;
+        margin-bottom: 70px;
+        font-family: "Dosis", sans-serif;
+        color: #111;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        font-weight: 400;
+    }
+    
+    .about__prew-text {
+        font-size: 24px;
+        line-height: 38px;
+        margin-bottom: 15px;
+    }
+    
+    .about__author {
+        letter-spacing: 2px;
+        font-weight: 400;
+        font-size: 11px;
+        text-transform: uppercase;
+        line-height: 38px;
+    }
+    
+    .about__text {
+        /* для разделения текста на несколько колонок исп. column-count */
+        column-count: 2;
+        /* для раcстояния между колонками исп. column-gap */
+        column-gap: 30px;
+    }
+    /* по умолчанию для p задан 15px;
+для того чтобы параграфы стали в ровень с prew__text */
+    
+    .about__text p {
+        margin: 0px;
+    }
+    
+    .about__photo {
+        margin-top: 105px;
+        text-align: center;
+        text-transform: uppercase;
+        font-family: "Dosis", sans-serif;
+        letter-spacing: 4px;
+    }
+    
+    .about__photo img {
+        /* для того чтобы картинка не вылазила за пределы своего блока исп. max-width и width */
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        margin-bottom: 15px;
+        /* для того чтобы картинка была нецветной исп: */
+        filter: grayscale(1);
+        /* для изм. скор. анимации исп. */
+        transition: all 1s;
+    }
+    /* для того чтобы при наведении на блок .about__photo-item картинка становилась цветная исп. hover */
+    
+    .about__photo-item:hover img {
+        filter: grayscale(0);
+    }
+    /* чтобы курсор при наведении на блок .about__photo-item превращался в руку исп. */
+    
+    .about__photo-item {
+        cursor: pointer;
+    }
+    
+    .about__photo-position {
+        font-size: 12px;
+        margin-top: 5px;
+    }
+    
+    .services {
+        padding-top: 140px;
+        padding-bottom: 170px;
+    }
+    
+    .services__title {
+        text-align: center;
+        font-size: 18px;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        color: #111;
+        font-family: 'Dosis', sans-serif;
+        font-weight: 400;
+    }
+    
+    .services .tab {
+        width: 20%;
+        display: inline-block;
+        text-align: center;
+        font-size: 14px;
+        letter-spacing: 4px;
+        float: left;
+        margin-top: 120px;
+        padding-top: 85px;
+        text-transform: uppercase;
+        padding-bottom: 70px;
+        cursor: pointer;
+        position: relative;
+        color: #111;
+    }
+    
+    .services .tab:before {
+        content: "\e03b";
+        font-family: "icomoon";
+        position: absolute;
+        font-size: 48px;
+        top: 10px;
+        /* left: 95px; */
+        left: 50%;
+        transform: translate(-50%);
+        color: #111;
+    }
+    
+    .services .tab:nth-child(2):before {
+        content: "\e002";
+    }
+    
+    .services .tab:nth-child(3):before {
+        content: "\e033";
+    }
+    
+    .services .tab:nth-child(4):before {
+        content: "\e02b";
+    }
+    
+    .services .tab:nth-child(5):before {
+        content: "\e012";
+    }
+    
+    .services .tabs:after {
+        content: "";
+        clear: both;
+        display: block;
+    }
+    
+    .services .about__prew-text {
+        font-size: 24px;
+        line-height: 38px;
+        color: #777;
+    }
+    
+    .services .about-author {
+        font-size: 11px;
+        line-height: 38px;
+        letter-spacing: 2px;
+        color: #777;
+        text-transform: uppercase;
+    }
+    
+    .services .about__text {
+        font-size: 15px;
+        line-height: 26px;
+        color: #777;
+    }
+    /* код взятый из https://gist.github.com/Silver8Light/cf3860e6cf3f154eba744e1da47910d4 */
+    
+    .tabs__wrapper .tab {
+        text-transform: uppercase;
+        cursor: pointer;
+        /* чтобы сделать полупрозрачным надписи и иконки  */
+        opacity: 0.5;
+    }
+    
+    .tabs__wrapper .active {
+        text-decoration: underline;
+        /* чтобы сделать непрозрачным активный элемент */
+        opacity: 1;
+    }
+    
+    .tabs__wrapper .tab-item {
+        display: none;
+    }
+    
+    .tabs__wrapper .tab-item:first-child {
+        display: block;
+    }
+    
+    .sentence {
+        background-color: #111;
+    }
+    
+    .sentence__item {
+        max-width: 555px;
+        width: 100%;
+        display: block;
+        padding-top: 130px;
+        padding-bottom: 140px;
+    }
+    
+    .sentence__title {
+        font-size: 18px;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        color: #fff;
+        font-family: "Dosis", sans-serif;
+        font-weight: 300;
+    }
+    
+    .sentence__about {
+        padding-top: 20px;
+        font-size: 15px;
+        /* line-height: 26px; */
+        color: rgba(255, 255, 255, .7);
+    }
+    
+    .sentence__button {
+        font-size: 14px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-weight: 400;
+        background-color: #cfcfcf;
+        border: none;
+        line-height: 26px;
+        padding: 7px 40px;
+        border-radius: 2px;
+        margin-top: 40px;
+    }
+    
+    .sentence__button a {
+        color: #111;
+    }
+    
+    .sentence__image {
+        margin-top: -30px;
+    }
+    
+    .sentence__image {
+        width: 100%;
+    }
+    
+    .portfolio {
+        padding-top: 140px;
+        text-align: center;
+    }
+    
+    .portfolio__title {
+        font-size: 15px;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        font-family: "Dosis", sans-serif;
+        font-weight: 400;
+        color: #111;
+    }
+    
+    .portfolio__text {
+        font-size: 15px;
+        line-height: 26px;
+        color: #777;
+        padding-top: 75px;
+        width: 810px;
+        margin: 0 auto;
+    }
+    
+    .portfolio__items {
+        margin-top: 75px;
+    }
+    /* для того чтобы картинки максимально одинаковой высоты, и не съезжали ниже соседней картинки */
+    
+    .portfolio__container img {
+        /* min-height: 250px; */
+        width: 100%;
+    }
+    
+    .portfolio__btn {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    
+    .portfolio__btn button {
+        margin: 0 35px;
+        /* чтобы у кнопок был прозрачный фон */
+        background: transparent;
+        border: none;
+        text-transform: uppercase;
+        outline: none;
+        font-size: 13px;
+        letter-spacing: 4px;
+        font-family: "Dosis", sans-serif;
+        font-weight: 400;
+        color: #111;
+        opacity: .5;
+        cursor: pointer;
+    }
+    /* чтобы активную кнопку сделать черного цвета, 
+нужно в браузере нажать на определнной кнопке 
+"просмотреть код" и скопировать "mixitup-control-active" или другой класс который будет доступен*
+9 урок 38 минута*/
+    
+    .portfolio__btn button.mixitup-control-active {
+        opacity: 1;
+    }
+    
+    .portfolio__container a {
+        float: left;
+        width: 33.333%;
+        /* display: block; */
+    }
+    /* .portfolio__container a {
+    display: inline-block;
+} */
+    
+    .portfolio__container:after {
+        content: "";
+        clear: both;
+        display: block;
+    }
+    
+    .portfolio__container img {
+        filter: grayscale(1);
+        transition: all 1s;
+    }
+    
+    .mix:hover img {
+        filter: grayscale(0);
+    }
+    
+    .link {
+        padding-top: 65px;
+        padding-bottom: 70px;
+        background-color: #111;
+    }
+    
+    .link__wrapper {
+        max-width: 360px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    .link__item {
+        text-transform: uppercase;
+        font-size: 18px;
+        line-height: 26px;
+        color: #fff;
+        letter-spacing: 3px;
+        text-align: center;
+        padding-bottom: 20px;
+    }
+    
+    .link .link__button {
+        font-size: 14px;
+        line-height: 26px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #111;
+        background-color: #cfcfcf;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        left: 50%;
+        transform: translate(-50%);
+        /* чтобы кнопка стала по центру исп: */
+        position: relative;
+        padding-top: 7px;
+        padding-right: 50px;
+        padding-left: 40px;
+        padding-bottom: 7px;
+        border-radius: 2px;
+        font-weight: 400;
+    }
+    
+    .advantages {
+        padding-top: 140px;
+        padding-bottom: 145px;
+        font-weight: 400;
+        color: #111;
+    }
+    
+    .advantages__about-title {
+        text-align: center;
+        font-size: 18px;
+        letter-spacing: 5px;
+        /* font-weight: 400; */
+        text-transform: uppercase;
+        /* padding-bottom: 90px; */
+        /* color: #111; */
+        font-family: "Dosis", sans-serif;
+    }
+    
+    .icon {
+        text-align: center;
+        font-size: 48px;
+        letter-spacing: 5px;
+        padding-top: 90px;
+        padding-bottom: 35px;
+        /* color: #111; */
+        /* font-weight: 400; */
+    }
+    
+    .advantages__about-text {
+        font-size: 14px;
+        letter-spacing: 4px;
+        text-align: center;
+        text-transform: uppercase;
+        /* color: #111; */
+        /* font-weight: 400; */
+        font-family: "Dosis", sans-serif;
+    }
+    
+    .advantages__about p {
+        font-size: 14px;
+        line-height: 26px;
+        color: #777;
+        font-weight: 300;
+        /* font-family: 'Open Sans', sans-serif; */
+    }
+    
+    .slider {
+        background-color: #020202;
+        text-align: center;
+        padding: 135px 0;
+        margin: 0 auto;
+    }
+    
+    .slider__item {
+        max-width: 740px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    .slider__title {
+        font-size: 18px;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-family: "Dosis", sans-serif;
+        font-weight: 300;
+        padding-top: 53px;
+        margin-bottom: 40px;
+        position: relative;
+    }
+    /* чтобы вставить значок нужен класс: */
+    
+    .slider__title:before {
+        content: "\e057";
+        font-family: "icomoon";
+        font-size: 32px;
+        /* чтобы менять расположение значка нужно написать position: absolute; а родителю position: relative; */
+        position: absolute;
+        /* чтобы значок стал выше надписи нужно: */
+        top: 4px;
+        /* чтобы расположить значок по центру нужно: */
+        width: 100%;
+        left: 0;
+        right: 0;
+    }
+    
+    .slider__text {
+        font-size: 18px;
+        line-height: 30px;
+        font-weight: 300;
+        /* для указания непрозрачности исп. opacity или rgba() */
+        opacity: .75;
+        color: #fff;
+    }
+    
+    .slider__author {
+        text-transform: uppercase;
+        opacity: .3;
+        text-transform: uppercase;
+        line-height: 38px;
+        font-size: 11px;
+        letter-spacing: 2px;
+        font-weight: 200;
+        color: #fff;
+    }
+    /* создаем стрелочки влево и вправо,
+можно брать код с https://habr.com/ru/post/126207/ */
+    
+    .slider__wrapper .slick-btn {
+        position: absolute;
+        top: 30%;
+        /* чтобы стандартные кнопки были прозрачными */
+        background-color: transparent;
+        border: none;
+        z-index: 10;
+        cursor: pointer;
+        /* чтобы не появлялась рамка вокруг стрелки во время нажатия: */
+        outline: none;
+    }
+    
+    .slider__wrapper .slick-prev {
+        left: 0;
+        width: 0;
+        height: 0;
+        border-top: 45px solid transparent;
+        border-left: 45px solid #fff;
+        border-bottom: 45px solid transparent;
+    }
+    
+    .slider__wrapper .slick-next {
+        right: 0;
+        width: 0;
+        height: 0;
+        border-top: 45px solid transparent;
+        border-right: 45px solid #fff;
+        border-bottom: 45px solid transparent;
+    }
+    /* добавить стрелочки из icomoon */
+    
+    .slider__wrapper .slick-btn:before {
+        content: "\f107";
+        font-family: "icomoon";
+        position: absolute;
+        color: #020202;
+        font-size: 16px;
+    }
+    /* спозиционировать стрелочки */
+    
+    .slider__wrapper .slick-prev:before {
+        right: 32px;
+        top: -6px;
+        transform: rotate(90deg);
+    }
+    
+    .slider__wrapper .slick-next:before {
+        left: 32px;
+        top: -8px;
+        transform: rotate(-90deg);
+    }
+    /* Сделать точки слайда */
+    
+    .slider__wrapper .slick-dots {
+        position: absolute;
+        bottom: -100px;
+        left: 0;
+        right: 0;
+        width: 100%;
+    }
+    
+    .slider__wrapper .slick-dots li {
+        display: inline-block;
+    }
+    /* чтобы сделать из квадратных кнопок круглые */
+    /* найти класс button можно в консоле кода */
+    
+    .slider__wrapper .slick-dots li button {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        font-size: 0;
+        margin-left: 3px;
+        margin-right: 3px;
+        padding: 0;
+        outline: none;
+        border: 1px solid transparent;
+        color: #ccc;
+        cursor: pointer;
+    }
+    
+    .slider__wrapper .slick-dots li.slick-active button {
+        border: 1px solid #ccc;
+        background-color: transparent;
+        /* чтобы немного увеличить активную кнопку */
+        box-sizing: content-box;
+    }
+    
+    .news {
+        padding-top: 140px;
+        padding-bottom: 140px;
+    }
+    
+    .news__wrapper {
+        margin-bottom: 80px;
+    }
+    
+    .news__title {
+        float: left;
+        font-size: 18px;
+        letter-spacing: 5px;
+        color: #111;
+        font-family: "Dosis", sans-serif;
+        text-transform: uppercase;
+        font-weight: 400;
+        display: inline;
+    }
+    
+    .news__blog a {
+        float: right;
+        padding-right: 10px;
+        font-size: 11px;
+        letter-spacing: 4px;
+        color: #777;
+        font-family: "Dosis", sans-serif;
+        text-transform: uppercase;
+        font-weight: 400;
+        position: relative;
+    }
+    
+    .news__blog a:after {
+        content: "\f105";
+        font-family: "icomoon";
+        font-size: 12px;
+        right: -4px;
+        position: absolute;
+    }
+    
+    .news__wrapper:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    
+    .news img {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        margin-bottom: 30px;
+        filter: grayscale(1);
+        transition: all 1s;
+    }
+    
+    .news img:hover {
+        filter: grayscale(0);
+    }
+    
+    .news img {
+        cursor: pointer;
+    }
+    
+    .news__title-about {
+        text-transform: uppercase;
+        font-size: 15px;
+        letter-spacing: 2px;
+        color: #777;
+        font-family: 'Dosis', sans-serif;
+        margin-bottom: 17px;
+        font-weight: 400;
+    }
+    
+    .news__title-author {
+        text-transform: uppercase;
+        font-size: 11px;
+        letter-spacing: 4px;
+        color: #999;
+        font-family: 'Dosis', sans-serif;
+        margin-bottom: 15px;
+        font-weight: 400;
+    }
+    
+    .news__text p {
+        font-size: 15px;
+        color: #777;
+        font-weight: 300;
+    }
+    
+    .news__button {
+        background-color: #e5e5e5;
+        display: inline-block;
+        padding-left: 15px;
+        padding-right: 25px;
+        border-radius: 2px;
+        position: relative;
+    }
+    
+    .news__button:after {
+        content: "\f105";
+        font-family: "icomoon";
+        font-size: 12px;
+        color: #777;
+        right: 15px;
+        top: 1px;
+        position: absolute;
+    }
+    
+    .news__button a {
+        text-transform: uppercase;
+        font-weight: 400;
+        color: #777;
+        padding: 0px;
+        font-size: 11px;
+        text-transform: uppercase;
+    }
+    
+    .email {
+        padding-top: 75px;
+        padding-bottom: 80px;
+        background-color: #f8f8f8;
+    }
+    
+    .email__wrapper {
+        max-width: 426px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    .email__title {
+        text-align: center;
+        font-size: 16px;
+        line-height: 26px;
+        text-transform: uppercase;
+        color: #111;
+        letter-spacing: 4px;
+        font-family: 'Dosis', sans-serif;
+        font-weight: 300;
+    }
+    
+    .email input[type="text"] {
+        height: 36px;
+        width: 293px;
+        border: 1px solid #dfdfdf;
+        padding-left: 13px;
+        padding-right: 13px;
+        outline: none;
+        margin-top: 15px;
+        border-radius: 2px;
+    }
+    
+    .email input::placeholder {
+        text-transform: uppercase;
+        font-size: 12px;
+        letter-spacing: 2px;
+        color: #777;
+    }
+    
+    .email input[type="submit"] {
+        height: 36px;
+        width: 128px;
+        border: none;
+        background-color: #323232;
+        letter-spacing: 2px;
+        font-size: 13px;
+        color: #fff;
+        text-transform: uppercase;
+        border-radius: 2px;
+        outline: none;
+        cursor: pointer;
+    }
+    
+    .email__info {
+        /* text-align: center; */
+        padding-left: 15px;
+        font-size: 11px;
+        line-height: 26px;
+        padding-top: 14px;
+        display: inline-block;
+        left: 50%;
+        transform: translate(-50%);
+        position: relative;
+        color: #aaa;
+    }
+    
+    .email__info:before {
+        content: "\f06a";
+        font-family: "icomoon";
+        font-size: 12px;
+        position: absolute;
+        left: 0px;
+        font-size: 12px;
+    }
+    
+    .contact {
+        padding-top: 130px;
+        padding-bottom: 140px;
+    }
+    
+    .contact__title {
+        font-size: 18px;
+        margin-bottom: 70px;
+        font-family: "Dosis", sans-serif;
+        color: #111;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        font-weight: 400;
+        text-align: center;
+    }
+    
+    .contact__wrapper {
+        max-width: 770px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    .contact__info {
+        margin-bottom: 75px;
+    }
+    
+    .contact__info:after {
+        content: "";
+        clear: both;
+        display: block;
+    }
+    
+    .contact__info-item {
+        width: 33.333%;
+        float: left;
+    }
+    
+    .info-item span {
+        color: #777;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        font-size: 12px;
+    }
+    
+    .info-item {
+        display: block;
+        /* для резервирования места под иконки: */
+        padding-left: 45px;
+        position: relative;
+        color: #444;
+        font-size: 15px;
+        line-height: 24px;
+    }
+    
+    .info-item:before {
+        content: "";
+        position: absolute;
+        left: 4px;
+        top: 15px;
+        width: 23px;
+        height: 23px;
+        background-color: #111;
+        transform: rotate(45deg);
+        border-radius: 1px;
+    }
+    
+    .info-item:after {
+        content: "\f095";
+        font-family: "icomoon";
+        font-size: 14px;
+        left: 11px;
+        top: 14px;
+        position: absolute;
+        color: #fff;
+    }
+    /* чтобы поставить разные значки в разных квадратах нужен :nth-child() */
+    
+    .contact__info-item:nth-child(2) .info-item:after {
+        content: "\f041";
+        left: 11px;
+    }
+    
+    .contact__info-item:nth-child(3) .info-item:after {
+        content: "\f003";
+        left: 8px;
+    }
+    
+    .info-item span {
+        display: block;
+    }
+    
+    .form-position:after {
+        content: "";
+        clear: both;
+        display: block;
+    }
+    
+    .form-left,
+    .form-right {
+        float: left;
+        width: 50%;
+    }
+    
+    .form-left input {
+        width: 100%;
+        display: block;
+        height: 35px;
+        border: 1px solid #e5e5e5;
+        margin-bottom: 10px;
+        /* чтобы небыло голубой рамки при нажатии на строку */
+        outline: none;
+        padding-left: 12px;
+        padding-right: 12px;
+        border-radius: 1px;
+    }
+    /* чтобы placeholder был в верхнем регистре */
+    
+    .form-left input::placeholder {
+        text-transform: uppercase;
+        color: #777;
+        font-size: 12px;
+        font-weight: 26px;
+        letter-spacing: 2px;
+    }
+    
+    .form-right textarea {
+        width: 100%;
+        display: block;
+        height: 80px;
+        padding: 12px;
+        outline: none;
+        border: 1px solid #e5e5e5;
+        border-radius: 1px;
+        /* чтобы нельзя было изменять размер рамки */
+        resize: none;
+    }
+    
+    .form-right textarea::placeholder {
+        text-transform: uppercase;
+        color: #777;
+        font-size: 12px;
+        font-weight: 26px;
+        letter-spacing: 2px;
+    }
+    
+    .form-left {
+        padding-right: 5px;
+    }
+    
+    .form-right {
+        padding-left: 5px;
+    }
+    
+    .form-text {
+        display: inline-block;
+        font-size: 11px;
+        line-height: 26px;
+        color: #aaa;
+        font-weight: 400;
+        margin-top: 30px;
+        padding-left: 16px;
+        position: relative;
+    }
+    
+    .form-text:before {
+        content: "\f06a";
+        font-family: "icomoon";
+        position: absolute;
+        left: 0;
+        font-size: 15px;
+        color: #aaa;
+    }
+    /* чтобы обратиться к кнопке, нужно обратиться к родителю блока */
+    
+    .contact__form input[type="submit"] {
+        float: right;
+        border: none;
+        font-size: 13px;
+        letter-spacing: 2px;
+        line-height: 26px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        padding-left: 20px;
+        padding-right: 20px;
+        text-transform: uppercase;
+        color: #fff;
+        outline: none;
+        background-color: #333;
+        border-radius: 2px;
+        margin-top: 20px;
+        font-weight: 400;
+        cursor: pointer;
+    }
+    
+    .map {
+        position: relative;
+    }
+    
+    .map__bg {
+        background-color: rgba(2, 2, 2, .95);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        cursor: pointer;
+        /* Добавляет плавность transition*/
+        transition: all .5s;
+    }
+    
+    .map__bg.active {
+        top: 400px;
+        bottom: -100px;
+    }
+    
+    .map__bg span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: inline-block;
+    }
+    
+    .map__bg .square {
+        width: 28px;
+        height: 28px;
+        background-color: #fff;
+        border-radius: 3px;
+        transform: rotate(45deg);
+        /* margin: 0 auto; */
+        margin-bottom: 25px;
+        position: relative;
+        margin-left: 60px;
+    }
+    
+    .map__bg .square:before {
+        content: "\f041";
+        font-family: "icomoon";
+        font-size: 14px;
+        color: #222;
+        transform: rotate(-45deg);
+        position: absolute;
+        top: 2px;
+        left: 11px;
+    }
+    
+    .map__bg h3 {
+        display: block;
+        font-size: 16px;
+        margin-block-start: 0px;
+        margin-block-end: 0px;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: 400;
+        text-transform: uppercase;
+        font-family: "Dosis", sans-serif;
+        letter-spacing: 3px;
+        color: #fff;
+        opacity: .75;
+    }
+    
+    .map__bg h3:after {
+        content: "\f107";
+        font-family: "icomoon";
+        padding-left: 5px;
+    }
+    
+    .map iframe {
+        width: 100%;
+        height: 400px;
+    }
+    
+    .footer {
+        padding-top: 140px;
+        padding-bottom: 50px;
+        position: relative;
+    }
+    
+    .footer__wrapper {
+        max-width: 214px;
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+    }
+    
+    .footer__wrapper img {
+        margin: 0 auto;
+        display: block;
+        padding-bottom: 24px;
+        width: 78px;
+    }
+    
+    .footer__nav li {
+        display: inline-block;
+    }
+    
+    .footer__nav li a {
+        width: 24px;
+        height: 24px;
+        border: 1px solid #111;
+        border-radius: 2px;
+        display: inline-block;
+        float: left;
+        margin-left: 7.5px;
+        margin-right: 7.5px;
+        transform: rotate(45deg);
+    }
+    
+    .footer__nav ul:after {
+        content: "";
+        clear: both;
+        display: block;
+    }
+    
+    .footer__nav li .info-point:after {
+        content: "\f09a";
+        font-family: "icomoon";
+        transform: rotate(-45deg);
+        padding-left: 7px;
+        padding-top: 1px;
+        display: inline-block;
+        color: #111;
+        font-size: 14px;
+    }
+    
+    .footer__nav li:nth-child(2) .info-point:after {
+        content: "\f099";
+        padding-left: 5px;
+    }
+    
+    .footer__nav li:nth-child(3) .info-point:after {
+        content: "\f1b4";
+        padding-left: 4px;
+    }
+    
+    .footer__nav li:nth-child(4) .info-point:after {
+        content: "\f0e1";
+        padding-left: 6px;
+    }
+    
+    .footer__nav li:nth-child(5) .info-point:after {
+        content: "\f0d2";
+        padding-left: 6px;
+    }
+    
+    .footer__wrapper .item-date {
+        text-align: center;
+        padding-top: 105px;
+        font-size: 11px;
+        line-height: 24px;
+        color: #111;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        font-family: "Dosis", sans-serif;
+        font-weight: 400;
+    }
+    
+    .footer__wrapper .item-social {
+        font-size: 11px;
+        line-height: 24px;
+        color: #999;
+        font-family: "Dosis", sans-serif;
+        font-weight: 400;
+        text-align: center;
+        letter-spacing: 1px;
+    }
+    
+    .up {
+        position: absolute;
+        margin-top: 10px;
+        bottom: 20px;
+        right: 30px;
+    }
+    
+    .up a {
+        display: inline-block;
+    }
+    
+    .up span {
+        width: 0;
+        height: 0;
+        border-left: 14px solid transparent;
+        border-right: 14px solid transparent;
+        border-bottom: 16px solid #c6c6c6;
+        border-radius: 3px;
+        display: block;
+        position: relative;
+    }
+    
+    .up span:before {
+        content: "\f107";
+        font-family: "icomoon";
+        position: absolute;
+        color: #fff;
+        font-size: 16px;
+        transform: rotate(180deg);
+        top: -1px;
+        left: -4px;
+    }
+
+
+    .testt{
+        background-color: grey;
+        width: 600px;
+        
+    }
+    .textt{
+        color: red;
+        width: 400px;
+        height: 400px;
+        overflow: scroll;
+    }

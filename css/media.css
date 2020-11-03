@@ -1,0 +1,232 @@
+@media (max-width: 768px) {
+    .top__inner {
+        top: 50%;
+    }
+    .menu ul {
+        display: none;
+        position: absolute;
+        top: 75px;
+        left: 0px;
+        right: 0px;
+        text-align: center;
+        background-color: #ccc;
+    }
+    /* для того чтобы кнопка отображалась в мобильной версии, нужно добавить menu__btn */
+    .menu__btn {
+        display: block;
+    }
+    .menu li {
+        display: block;
+        padding: 5px 0px;
+    }
+    .menu li+li {
+        padding-left: 0px;
+    }
+    /* чтобы ссылка нажималась по всей ширине окна */
+    .menu a {
+        display: block;
+    }
+    .about {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+    .about__text {
+        column-count: 1;
+        column-gap: 0px;
+    }
+    .services {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+    .tabs__wrapper .tab {
+        /* display: block; */
+        width: 100%;
+        padding: 15px 0px 15px;
+        padding-left: 60px;
+        text-align: left;
+        margin: 0px;
+    }
+    .services .tab:before {
+        font-size: 32px;
+        top: 15px;
+        left: 25px;
+        position: absolute;
+    }
+    .tab-item {
+        padding-top: 40px;
+    }
+    .sentence__image {
+        display: none;
+    }
+    .sentence__item {
+        text-align: center;
+        margin: 0 auto;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    .portfolio {
+        padding-top: 50px;
+    }
+    .portfolio__text {
+        width: 560px;
+        padding-top: 40px;
+    }
+    .portfolio__btn button {
+        margin: 0 20px;
+    }
+    .portfolio__container a {
+        width: 50%;
+    }
+    .advantages {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    .slider__text {
+        width: 500px;
+        margin: 0 auto;
+    }
+    .advantages .icon {
+        padding-top: 50px;
+    }
+    .news {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    .news__button {
+        margin-bottom: 25px;
+    }
+    .contact {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+    .contact__title {
+        margin-bottom: 40px
+    }
+    .contact__info-item {
+        width: 100%;
+        margin-top: 15px;
+    }
+    .footer {
+        padding-top: 70px
+    }
+}
+
+@media(max-width: 640px) {
+    .top__title {
+        letter-spacing: 20px;
+    }
+    .about {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    .about__title {
+        margin-bottom: 40px
+    }
+    .portfolio__text {
+        width: 512px;
+        padding-top: 40px;
+    }
+    .portfolio__btn button {
+        margin: 0 10px;
+    }
+}
+
+@media(max-width: 580px) {
+    .advantages p {
+        min-height: 135px;
+    }
+}
+
+@media(max-width: 510px) {
+    .top__title {
+        line-height: 34px;
+    }
+    .top__text {
+        width: 300px;
+        margin: 0 auto;
+    }
+    .services__title {
+        margin-bottom: 16px;
+    }
+    .top__inner {
+        top: 55%;
+    }
+    .portfolio__text {
+        width: 378px;
+        padding-top: 40px;
+    }
+    .portfolio__btn button {
+        margin: 0px 30px;
+    }
+    .slider__text {
+        width: 400px;
+    }
+    .email__wrapper {
+        text-align: center;
+    }
+    .email__info {
+        display: block;
+        padding-left: 0;
+    }
+    .email__info:before {
+        position: relative;
+    }
+    .email input {
+        margin-top: 20px;
+    }
+    .form-right {
+        float: none;
+        padding-left: 0px
+    }
+}
+
+@media(max-width: 414px) {
+    .top__title {
+        line-height: 34px;
+    }
+    /* .top__text {
+                                width: 415px;
+                                padding-left: 34px;
+                            } */
+    .services__title {
+        margin-bottom: 16px;
+    }
+    .services .about__prew-text {
+        font-size: 18px;
+        line-height: 30px;
+    }
+    .portfolio__container a {
+        width: 100%;
+    }
+    .portfolio__text {
+        width: 356px;
+    }
+    .portfolio__btn button {
+        margin: 10px 30px;
+        display: block;
+    }
+    .portfolio__items {
+        margin-top: 50px;
+    }
+    .advantages__about-title {
+        margin-bottom: 40px;
+    }
+    .advantages .icon {
+        padding-top: 0px;
+    }
+    .slider__text {
+        width: 330px;
+    }
+    .news__blog a {
+        margin-top: 50px;
+    }
+    .form-right {
+        width: 100%;
+    }
+}
+
+@media(min-width: 768px) {
+    .menu ul {
+        display: block !important;
+    }
+}
